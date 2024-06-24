@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./graphstyle.css"/>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+ 
+
+
+
+    <title>💹Graph</title>
+</head>
+<body>
+
+  <header class="bg-white">
+    <div class="container">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center">
+          <img style="height: 70px; width: 70px;" src="./Image/logo_header.png"/>
+          <span style="font-family: 'Shantell Sans'; font-weight: 700; font-size: 20pt; margin-left: 10px;">Code Visualizer</span>
+        </div>
+  
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="font-family: 'Shantell Sans';">
+          <li><a href="./index.html" class="nav-link px-4 link-secondary" style="font-weight: 700; font-size: 14pt;">Home</a></li>
+          <li><a href="./About.html" class="nav-link px-2" style="font-weight: 700; font-size: 14pt;">About</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link px-2 dropdown-toggle" style="font-weight: 700; font-size: 14pt;" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+              <li><a class="dropdown-item" href="./arrays.html">Arrays</a></li>
+              <li><a class="dropdown-item" href="./stack.html">Stack</a></li>
+              <li><a class="dropdown-item" href="./queue.html">Queue</a></li>
+              <li><a class="dropdown-item" href="./heapsort.html">heap sort</a></li>
+              <li><a class="dropdown-item" href="./linkedlists.html">Linked Lists</a></li>
+              <li><a class="dropdown-item" href="./trees.html">Trees</a></li>
+              <li><a class="dropdown-item" href="./graphs.html">Graphs</a></li>
+              <li><a class="dropdown-item" href="./quicksort.html">Quick Sort</a></li>
+              <li><a class="dropdown-item" href="./selectionsort.html">Selection Sort</a></li>
+            </ul>
+          </li>
+        </ul>
+  
+        <div class="col-md-3 text-end">
+          <a href="./contact.html" style="font-family: 'Indie Flower'; color: #ffffff; font-size: 20px;" class="btn btn-primary">Contact us</a>
+        </div>
+      </header>
+    </div>
+  </header>
+  
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzog5JpM4eQ6i5jGQ2/Jqj4XvRBTvnBvbqC9S5QMRa1d" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuD3nBpeB2BksjL3PvnlAk5W57U8p7Pj3XqcF16sPj41S9Uuj0QuF7DovWxBjC3i" crossorigin="anonymous"></script>
+  
+  
+
+
+
+
+
+      <!--Second Section-->
+
+<section
+class="relative bg-cover bg-center bg-no-repeat"
+style="background-image: linear-gradient(to right, rgba(255, 255, 255), rgba(255, 255, 255, 0.50)), url(https://w0.peakpx.com/wallpaper/606/581/HD-wallpaper-abstract-colorful-design-abstract-colorful-deviantart-digital-art-artist-artwork.jpg);"
+>
+<div
+  class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+></div>
+
+<div
+  class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+>
+  <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+    <h1 class="text-3xl font-extrabold sm:text-5xl" style="font-family: 'kalam';font-weight: 1000; font-size: 60pt;">
+      Let us Learn 
+
+      <strong class="block font-extrabold text-rose-700" style="color: rgb(37, 217, 61); font-family: 'kalam';">Graph </strong>
+    </h1>
+
+    <p class="mt-4 max-w-lg sm:text-xl/relaxed" style="font-size: 25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+      We’re thrilled to have you join our community! How excited are you to embark on this journey of learning new things with us?
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-4 text-center">
+      <a
+        href="#"
+        class="block w-full rounded bg-green-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+        style="font-family: 'kalam';font-size: 15pt;"
+      >
+        Get Started
+      </a>
+
+      <a
+        href="#"
+        class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-green-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+        style="font-family: 'kalam';font-size: 15pt;"
+      >
+        About us
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<div class="bg-light d-flex align-items-center justify-content-center min-vh-100">
+  <div class="container">
+      <h1 class="text-center mb-5" style="font-family: 'kalam'; font-weight: 900;font-size: 40pt;">Your <span style="font-family: 'kalam'; font-weight: 900;font-size: 40pt;color: darkorange;">Learning</span> Module</h1>
+      
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Column 1 -->
+          <div class="col">
+              <div class="bg-white p-0 module-card">
+                  <img src="https://img.freepik.com/premium-photo/isometric-application-ux-pc-phone-with-business-graph-analytics-data_979520-4399.jpg" alt="Image 1" class="img-fluid rounded-top">
+                  <div class="card-body text-center">
+                      <h2 class="h5 mb-3" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Basics of Graph</h2>
+                      <p class="mb-3 " style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Learn the fundamental concepts of graphs in data visualization.</p>
+                      <button  style="font-family: 'Indie Flower';color: #ffffff;font-size: 20px;" class="btn btn-success">Let's Go</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col">
+              <div class="bg-white p-0 module-card">
+                  <img src="https://img.freepik.com/premium-photo/data-computer-illlustration_275897-2565.jpg" alt="Image 2" class="img-fluid rounded-top">
+                  <div class="card-body text-center">
+                      <h2 class="h5 mb-3" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Graph Transversal</h2>
+                      <p class="mb-3" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Explore graph traversal algorithms for data analysis.</p>
+                      <button style="font-family: 'Indie Flower';color: #ffffff;font-size: 20px;" class="btn btn-success">Let's Go</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="col">
+              <div class="bg-white p-0 module-card">
+                  <img src="https://img.freepik.com/premium-photo/laptop-with-graph-screen_900958-30148.jpg" alt="Image 3" class="img-fluid rounded-top">
+                  <div class="card-body text-center">
+                      <h2 class="h5 mb-3" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Dijkstra Algorithm</h2>
+                      <p class="mb-3" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Master the Djakartra algorithm for optimizing graph-based problems.</p>
+                      <button style="font-family: 'Indie Flower';color: #ffffff;font-size: 20px;" class="btn btn-success">Let's Go</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+
+  <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+    <img class="profile-image" src="https://aiandfaith.org/wp-content/uploads/2023/05/photo-1644088379091-d574269d422f-e1683763424805.jpg" alt="Profile Image" style="width: 290px; height: 300px; border-top-right-radius: 50%; border-top-left-radius: 50%; margin-left: 20px; float: left; border: 1px solid #ffffff; box-shadow: 0px 10px 20px rgba(65, 27, 27, 0.1);">
+    <div class="card-content" style="margin-top: 80px; padding-left: 20px;">
+      <h1 class=" fw-bold text-body-emphasis" style="font-family: 'Kalam', cursive;font-weight: 1500;text-align: center;font-size: 40pt;padding-top: 18pt;padding-bottom: 0px"><span style="font-family: 'Kalam', cursive;color: rgb(47, 224, 177);">What </span> Is Graph Data Struture ?</h1>
+        <p class="card-text" style="text-align: justify; font-size: 28px; font-family: 'kalam', sans-serif; color: #0a0909; line-height: 1.6;font-weight: 800; font-size: 12pt;">
+            Graphs in data structures are non-linear data structures made up of a finite number of nodes or vertices and the edges that connect them. Graphs in data structures are used to address real-world problems in which it represents the problem area as a network like telephone networks, circuit networks, and social networks. For example, it can represent a single user as nodes or vertices in a telephone network, while the link between them via telephone represents edges.
+        </p>
+        <a style="font-family: 'Indie Flower';color: #ffffff;font-size: 20px;" href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" class="btn btn-warning" style="margin-left: 20px; background-color: #28a745; border-color: #28a745;">Know More</a>
+        <a href="./grapeone.html" class="btn btn-info" style="font-family: 'Indie Flower';color: #ffffff;font-size: 20px;">See Animation</a>    </div>
+</div>
+
+
+
+
+
+
+<div style="margin-top: 200px;">
+
+<h1 class="text-center mb-5" style="font-family: 'kalam'; font-weight: 900;font-size: 40pt;">Basic <span style="font-family: 'kalam'; font-weight: 900;font-size: 40pt;color: rgb(0, 26, 255);">Terminologies</span> Of Graph</h1>
+
+<div style="display: flex; justify-content: flex-start;">
+  
+  <div class="card-group" style="display: flex; justify-content: space-between; flex-wrap: wrap; width: 100%;">
+
+    <div class="card" style="margin: 10px; ">
+      <img class="card-img-top" src="./image/nodes.png" alt="Nodes and Edges">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Nodes and Edges</h5>
+        <p class="card-text" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Nodes are individual entities within a graph data structure that store data or information. Edges are the connections between nodes that represent relationships or interactions.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin: 10px;">
+      <img class="card-img-top" src="./image/weighted graph.gif" alt="Weighted Graph">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Weighted Graph</h5>
+        <p class="card-text" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">In a weighted graph, each edge is assigned with some data such as length or weight. The weight of an edge e can be given as w(e) which must be a positive (+) value indicating the cost of traversing the edge.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin: 10px;">
+      <img class="card-img-top" src="./image/connected graph.gif" alt="Connected Graph">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Connected Graph</h5>
+        <p class="card-text" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">A complete graph is the one in which every node is connected with all other nodes. A complete graph contain n(n-1)/2 edges where n is the number of nodes in the graph.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<h1 class=" fw-bold text-body-emphasis" style="font-family: 'Kalam', cursive;font-weight: 1500;text-align: center;font-size: 40pt;padding-top: 118pt;padding-bottom: 0px;"> Type Of <span style="font-family: 'Kalam', cursive;color:#FEED30;">Graph</span></h1>
+ 
+  <div style="position: absolute;margin-top: 20px;margin-left: 75px;padding-bottom: 10px;">
+    <div id="pointer" style="position: absolute; top: 1px;"><p style="font-size: 20pt;text-align: center; font-size: 22pt;font-weight: 800;color: #000000;"></p></div>
+    <section class="tabs-container" >
+   
+     <label for="tab1" style="font-size: 14pt; font-weight: 700;"> Start Reding</label>
+     <label for="tab2"> Undirected Graph </label>
+     <label for="tab3">Directed Graph </label>
+     <label for="tab4"> Weighted Graph </label>
+     <label for="tab5"> Unweighted Graph </label>
+    </section>
+
+<input name="tab" id="tab1" type="radio" checked />
+<section class="tab-content">
+<h2 style="font-size: 28pt;"> Lets know more about graphs </h2>
+<p><br>A graph is a non-linear kind of data structure made up of nodes or vertices and edges. The edges connect any two nodes in the graph, and the nodes are also known as vertices.So depending upon the position of these nodes and vertices, there are different types of graphs, such as: Directed ,Undirected ,Weighted Graphs etc</p>
+<!-- Any other content -->
+</section>
+
+<input name="tab" id="tab2" type="radio" checked />
+<section class="tab-content">
+<p id="section-inner"> Undirected Graphs<P style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">  <hr> <br>A graph in which edges have no direction, i.e., the edges do not have arrows indicating the direction of traversal. Example: A social network graph where friendships are not directional.</P> </p>
+<a href="https://www.geeksforgeeks.org/what-is-unidrected-graph-undirected-graph-meaning/" class="btn btn-info" style="margin-left: 20px;position: relative;left:650pt;top: 94pt;font-family: 'Indie Flower';font-size: 20px;color: #ffffff;">Know More</a>
+</section>
+
+<input name="tab" id="tab3" type="radio" checked />
+<section class="tab-content">
+  <p id="section-inner">  Directed Graphs <hr><br> A graph in which edges have a direction, i.e., the edges have arrows indicating the direction of traversal. Example: A web page graph where links between pages are directional </p>
+<a href="https://www.geeksforgeeks.org/what-is-directed-graph-directed-graph-meaning/" class="btn btn-info" style="margin-left: 20px;position: relative;left:650pt;top: 94pt;font-family: 'Indie Flower';font-size: 20px;color: #ffffff;">Know More</a>
+</section>
+
+<input name="tab" id="tab4" type="radio" checked />
+<section class="tab-content">
+  <p id="section-inner">  Weighted Graphs <hr><br> A graph in which edges have weights or costs associated with them. Example: A road network graph where the weights can represent the distance between two cities</p>
+<a href="https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-weighted-graph/" class="btn btn-info" style="margin-left: 20px;position: relative;left:650pt;top: 94pt;font-family: 'Indie Flower';font-size: 20px;color: #ffffff;">Know More</a>
+</section>
+
+
+<input name="tab" id="tab5" type="radio" checked />
+<section class="tab-content">
+  <p id="section-inner">  Unweighted Graphs <hr><br> A graph in which edges have no weights or costs associated with them. Example: A social network graph where the edges represent friendships</p>
+<a href="https://www.tutorialspoint.com/applications-advantages-and-disadvantages-of-unweighted-graph" class="btn btn-info" style="margin-left: 20px;position: relative;left:650pt;top: 94pt;font-family: 'Indie Flower';font-size: 20px;color: #ffffff;">Know More</a>
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+<div >
+  
+  <div class="grid-container" style="margin-top: 1700px;">
+    <h1 class=" fw-bold text-body-emphasis" style="font-family: 'Kalam', cursive;font-weight: 1500;text-align: center;font-size: 40pt;padding-top: 118pt;padding-bottom: 0px;">Type Of <span style="font-family: 'Kalam', cursive;color: rgb(0, 255, 0);">Transversal</span> </h1>
+    <div style="display: flex;">
+    <div class="grid-item"  >
+      <div class="card" style="width: 28rem;">
+        <img class="card-img-top" src="./image/Breadth-First-Search-Algorithm.gif" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Breadth-First-Search</h5>
+          <p class="card-text" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Breadth-First Search (BFS) is a graph traversal algorithm that systematically explores the neighbor vertices of a starting vertex before moving to the next level of vertices, using a queue to keep track of vertices to be explored.</p>
+          <a href="https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/" id="th-id" class="btn btn-primary">Know more</a>
+          <a href="./graphtwo.html" class="btn btn-danger">See Animation</a>
+        </div>
+      </div>
+        
+    </div>
+    <!-- Second grid item -->
+    <div class="grid-item">
+      <div class="card" style="width: 28rem;margin-right: 12px;">
+        <img class="card-img-top" src="./image/Depth-First-Search.gif" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-size: 24px;font-family: 'Indie Flower';font-weight: 700;">Depth-First-Search</h5>
+          <p class="card-text" style="font-size: 20px;font-family: 'Indie Flower';font-weight: 700;">Depth-first search is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.</p>
+          <a href="https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/?ref=lbp" class="btn btn-primary">Know More</a>
+          <a href="./graphtwo.html" class="btn btn-danger">See Animation</a>
+        </div>
+      </div>
+     
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    
+    <div class="container" style="max-width: 1200px; padding: 0 20px; margin-top: 1400px; margin-bottom: 250px;">
+
+      <div class="card-content" style="margin-top: 80px; padding-left: 20px;">
+        <h1 class="fw-bold text-body-emphasis" style="font-family: 'Kalam', cursive; font-weight: 1500; text-align: center; font-size: 40pt; padding-top: 18pt; padding-bottom: 0px"> What Is 
+          <span style="font-family: 'Kalam', cursive; color:#892CDC;">Dijkstra Algorithm </span>  ?
+        </h1>
+        
+        <p class="card-text" style="text-align: justify; font-size: 28px; font-family: 'Kalam', sans-serif; color: #0a0909; line-height: 1.6; font-weight: 800; font-size: 12pt;">
+          <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRgzKgx07Ah2uLGsVXSyQLVlPvyy9XbkUqRI730_rhUJI91ZJ20" alt="Image 2" class="img-fluid rounded-top" style="width: 250px; height: 200px; margin: 0 20px 20px 0; float: left;">
+          Dijkstra’s algorithm is a popular algorithms for solving many single-source shortest path problems having non-negative edge weight in the graphs i.e., it is to find the shortest distance between two vertices on a graph. It was conceived by Dutch computer scientist Edsger W. Dijkstra in 1956.
+
+
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+          <a style="font-family: 'Indie Flower'; color: #ffffff; font-size: 20px;" href="https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/" class="btn btn-warning" style="background-color: #28a745; border-color: #28a745;">Know More</a>
+          <a href="./graphthree.html" class="btn btn-info" style="font-family: 'Indie Flower'; color: #ffffff; font-size: 20px;">See Animation</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <img  src="./image/footer.png"  width="35" height="35" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></img>
+          <small class="d-block mb-3 text-body-secondary" style="font-family: Indie Family;">Code Visualizer &copy;2024</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Contributors</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="#">one</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">two</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">three</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#">four</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>sources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary text-decoration-none" href="#"> name</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#"> name</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#"> name</a></li>
+            <li><a class="link-secondary text-decoration-none" href="#"> name</a></li>
+
+          </ul>
+        </div>
+        
+      </div>
+    </footer>
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+      
+
+    
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./index.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/d3js/7.9.0/d3.min.js"></script>
+</html>

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Pacifico&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+   
+   
+   
+   
+   
+   
+   
+   
+   .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+
+
+    .nav-link{
+      font-size: 15pt;
+    }
+
+
+    .btn{
+      font-family: "Shantell Sans", cursive;
+font-optical-sizing: auto;
+
+    }
+
+
+
+
+    
+    .bg-light {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff; /* Light gray background */
+  }
+  .module-card {
+      position: relative;
+      transition: transform 0.2s;
+      background-color: #ffffff; /* White card background */
+      border-radius: 12px; /* Rounded corners */
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  .module-card:hover {
+      transform: translateY(-10px);
+  }
+  .module-card img {
+      width: 100%;
+      height: 200px; /* Adjust height as needed */
+      object-fit: cover;
+      border-top-left-radius: 12px; /* Rounded corners top left */
+      border-top-right-radius: 12px; /* Rounded corners top right */
+  }
+  .module-card .card-body {
+      padding: 1.5rem;
+  }
+  .module-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #333333; /* Dark text color */
+  }
+  .module-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #666666; /* Lighter text color */
+  }
+  .module-card .btn {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      background-color: #28a745; /* Green button background */
+      border-color: #28a745; /* Green button border */
+  }
+  .module-card .btn:hover {
+      background-color: #218838; /* Darker green on hover */
+      border-color: #1e7e34; /* Darker green border on hover */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+ /* Tabs Name Container */
+ .tabs-container{
+  position: relative;
+  background: #ffffff;
+  width: 160px;
+  height: 45vh;
+  float: left;
+  z-index: 20;
+  font-family: "Indie Flower", cursive;
+  
+  
+ padding: 10px;
+
+
+ background-image: url(./Image/medium\ \(2\).jpg);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
+}
+/* Tabs Names Label */
+.tabs-container label{
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid rgba(244, 242, 242, 0.1);
+  display: block;
+  font-size: 13px;
+  color: #000000;
+  cursor: pointer;
+  user-select: none;
+  font-family: "Indie Flower", cursive;
+  font-size: 14pt;
+}
+
+/* Hover effect on tabs names */
+.tabs-container label:hover{
+ background: rgba(87, 28, 28, 0.2);
+
+}
+
+
+/* Content area for tabs */
+.tab-content{
+  position: relative;
+  background: #fcfcfc;
+  width: calc(100% - 240px);
+  min-height: 45vh;
+  padding: 15px;
+  float: left;
+  box-sizing: border-box;
+  z-index: 19;
+  display: none;
+  border: 8px solid;
+ padding: 10px;
+ border: 2px solid #00A4BD;
+ padding: 10px;
+ box-shadow: 6px 4px #00A4BD;
+ font-family: "Indie Flower", cursive;
+  font-size: 14pt;
+
+  
+}
+
+.tab-content:after{
+  content: "";
+  clear: both;
+
+}
+
+/* Hide input radio from users */
+input[name="tab"]{
+  display: none;
+}
+/* Show tab when input checked */
+input[name="tab"]:checked + .tab-content{
+  display: block;
+  animation: slide 0.5s forwards;
+}
+
+/* Slide animation for tab contents */
+@keyframes slide{
+  from{
+    left: -100%;
+    opacity: 0;
+  }
+  to{
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.card{
+ font-family: "Indie Flower", cursive;
+ 
+}
+#section-inner{
+  font-size: 30pt;
+}
+ 
+
+
+
+
+
+
+.grid-container {
+  position: absolute;
+  top: 1740px;
+ 
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 equal width columns */
+      gap: 40px; /* Gap between grid items */
+      place-items: center;
+  height: 700px;
+
+
+
+  
+
+    }
+    .grid-item {
+      display: grid;
+    
+      padding: 20px; /* Padding inside each grid item */
+      width: 600px;
+      grid-column: span 1;
+      place-items: center;
+      
+    
+  
+     
+
+    }
+
+.card-text{
+  font-size: 16px;
+  font-family: 'Indie Flower';
+  font-weight: 400;
+}
+
+#th-id{
+  background-color: rgb(13, 110, 253);
+  font-family: 'indie Flower';
+  border-bottom-style: solid;
+
+
+}

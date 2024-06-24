@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Algorithms Visualization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Pacifico&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+  
+    background-size: cover; /* Adjust to cover or contain as needed */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    
+}
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding: 20px;
+        }
+        .left-section, .right-section {
+            display: flex;
+            flex-direction: column;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right-section {
+            width: 300px;
+            margin-left: 20px;
+        }
+        .heading {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+            color: #333;
+            font-family: "Shantell Sans", cursive;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        label {
+            margin: 5px 0;
+        }
+        input {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        svg {
+            border: 1px solid #ccc;
+        }
+        .link {
+            stroke: black;
+            stroke-opacity: 0.9;
+        }
+        .node circle {
+            stroke: white;
+            stroke-width: 1.5px;
+        }
+        .node text {
+            fill: white;
+            font-size: 12px;
+            font-weight: 800;
+            text-anchor: middle;
+        }
+        .order {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert alert-success" role="alert"><h1 class="heading">Graph Algorithms Visualization</h1></div>
+    <div class="container">
+        <div class="left-section">
+            <svg width="500" height="500"></svg>
+            <div id="orderDisplay" class="order"></div>
+        </div>
+        <div class="right-section">
+            <form id="graphForm" class="row g-3">
+                <div class="col-md-12">
+                    <label class="form-label" for="nodes">Enter the Nodes</label>
+                    <input class="form-control" type="text" id="nodes" name="nodes" value="1,2,3,4,5,6">
+                </div>
+                <div class="col-md-12">
+                    <label for="links" class="form-label">Enter the Links</label>
+                    <input class="form-control" type="text" id="links" name="links" value="1-2,1-3,3-5,3-4,4-2,2-6">
+                </div>
+                <button type="submit">Create Graph</button>
+                <a href="./graph.html"  id="dfsButton" type="button" class="btn btn-warning">Back to Home</a>
+            </form>
+        </div>
+    </div>
+    <script>
+        var width = 500,
+            height = 500;
+
+        var force = d3.layout.force()
+            .charge(-120)
+            .linkDistance(60)
+            .size([width, height]);
+
+        var svg = d3.select("svg");
+
+        var nodes, links, graph;
+
+        // Function to generate random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        document.getElementById('graphForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var nodesInput = document.getElementById('nodes').value.split(',');
+            var linksInput = document.getElementById('links').value.split(',');
+
+            nodes = nodesInput.map(function(d, i) {
+                return { id: d.trim(), group: 1, color: getRandomColor() };
+            });
+
+            var nodeMap = {};
+            nodes.forEach(function(d, i) {
+                nodeMap[d.id] = i;
+            });
+
+            links = linksInput.map(function(d) {
+                var parts = d.trim().split('-');
+                return { source: nodeMap[parts[0].trim()], target: nodeMap[parts[1].trim()], value: 1 };
+            });
+
+            // Create the graph data structure
+            graph = {
+                nodes: nodes,
+                links: links
+            };
+
+            // Draw the initial graph
+            drawGraph(graph);
+        });
+
+        function drawGraph(graph) {
+            // Clear previous graph
+            svg.selectAll("*").remove();
+
+            // Restart the force layout
+            force
+                .nodes(graph.nodes)
+                .links(graph.links)
+                .start();
+
+            // Create all the line svgs but without locations yet
+            var link = svg.selectAll(".link")
+                .data(graph.links)
+                .enter().append("line")
+                .attr("class", "link")
+                .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+            // Create the nodes
+            var node = svg.selectAll(".node")
+                .data(graph.nodes)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(force.drag);
+
+            node.append("circle")
+                .attr("r", 12) // Increase the radius
+                .style("fill", function(d) { return d.color; });
+
+            node.append("text")
+                .attr("dy", ".35em")
+                .text(function(d) { return d.id; });
+
+            // Now we are giving the SVGs co-ordinates - the force layout is generating the co-ordinates which this code is using to update the attributes of the SVG elements
+            force.on("tick", function() {
+                link.attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+
+                node.attr("transform", function(d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+            });
+        }
+    </script>
+</body>
+</html>
